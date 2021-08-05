@@ -10,7 +10,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 import {SafeAreaView, Text} from 'react-native';
-import Todo from '~/Screens/Todo';
+import Todo from '~/Screens/ToDo/Todo';
 
 const Container = styled.View`
   flex: 1;
