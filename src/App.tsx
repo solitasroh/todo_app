@@ -11,6 +11,10 @@ import styled from 'styled-components/native';
 
 import {SafeAreaView, Text} from 'react-native';
 import Todo from '~/Screens/ToDo/Todo';
+import Welcome from '~/Screens/Login/Welcome';
+import { createStackNavigator } from '@react-navigation/stack';
+import { LoginNaviParamList } from './Screens/types';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Container = styled.View`
   flex: 1;
@@ -21,12 +25,13 @@ const Top = styled(SafeAreaView)`
   flex: 1;
 `;
 
+
 const App = () => {
   return (
     <Top>
-      <Container>
-        <Todo />
-      </Container>
+      <NavigationContainer>
+        {<Welcome />}
+      </NavigationContainer>
     </Top>
   );
 };
