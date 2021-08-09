@@ -15,6 +15,7 @@ import Welcome from '~/Screens/Login/Welcome';
 import { createStackNavigator } from '@react-navigation/stack';
 import { LoginNaviParamList } from './Screens/types';
 import { NavigationContainer } from '@react-navigation/native';
+import LoginNavigator from './Screens/Navigator';
 
 const Container = styled.View`
   flex: 1;
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <Top>
       <NavigationContainer>
-        {<Welcome />}
+        {<LoginNavigator />}
       </NavigationContainer>
     </Top>
   );

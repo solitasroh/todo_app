@@ -18,7 +18,7 @@ const InputField = styled.TextInput`
 interface Props{
     placeholder ? : string;
     keyboardType?: 'default' | 'email-address' | 'numeric' | 'phone-pad';
-    secureTextEntye?:boolean;
+    secureTextEntry?:boolean;
     style?:Object;
     clearMode ?: boolean;
     onChangeText?:(text : string) => void;
@@ -27,7 +27,7 @@ interface Props{
 const Input = ({
     placeholder,
     keyboardType,
-    secureTextEntye,
+    secureTextEntry,
     style,
     clearMode,
     onChangeText,} : Props) => {
@@ -35,7 +35,7 @@ const Input = ({
         <Container style ={style}>
             <InputField
                 selectionColor = "#FFFFFF"
-                secureTextEntry = {secureTextEntye}
+                secureTextEntry = {secureTextEntry}
                 keyboardType ={keyboardType ? keyboardType : 'default'}
                 autoCapitalize = "none"
                 autoCorrect = {false}
