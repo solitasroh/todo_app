@@ -13,6 +13,7 @@ const Container = styled.SafeAreaView`
   background-color : #FDF6F0;
   align-items: center;
   justify-content: center;
+  padding : 40px;
 `;
 type NavigationProp = StackNavigationProp<LoginNaviParamList, 'Welcome'>;
 

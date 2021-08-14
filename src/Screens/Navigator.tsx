@@ -15,9 +15,13 @@ const LoginNavigator = () => {
         name = "Welcome"
         component = {Welcome}
         options = {{
-          title : 'Todo',
-          headerTransparent : true,
-          headerTintColor : '#E70915',
+          title : 'Welcome',
+          //headerTransparent : true,
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          //headerTintColor : '#E70915',
           headerTitleStyle : {
             fontWeight : 'bold',
           },
@@ -27,7 +31,7 @@ const LoginNavigator = () => {
         name = "Login"
         component = {Login}
         options = {{
-          title : 'Todo',
+          title : 'Login',
           headerTransparent : true,
           headerTintColor : '#E70915',
           headerTitleStyle : {
@@ -39,9 +43,9 @@ const LoginNavigator = () => {
         name = "CreateAccount"
         component = {CreateAccount}
         options = {{
-          title : 'Todo',
+          title : 'Sign Up',
           headerTransparent : true,
-          headerTintColor : '#E70915',
+          headerTintColor : '#515E63',
           headerTitleStyle : {
             fontWeight : 'bold',
           },

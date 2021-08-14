@@ -7,12 +7,16 @@ const Container = styled.View`
   padding-left : 16px;
   padding-right : 16px;
   border-radius : 4px;
-  background-color : #333333;
+  background-color : #FFFFFF;
 `;
 
 const InputField = styled.TextInput`
     flex : 1;
-    color : #FFFFFF;
+    color : #38738a;
+
+    // &:hover {
+    //     border-color :#00c3ff;
+    //   }
 `;
 
 interface Props{
@@ -40,7 +44,7 @@ const Input = ({
                 autoCapitalize = "none"
                 autoCorrect = {false}
                 allowFontScaling = {false}
-                placeholderTextColor = "#FFFFFF"
+                placeholderTextColor = "#38738a"
                 placeholder = {placeholder}
                 clearButtonMode = {clearMode ? 'while-editing' : 'never'}
                 onChangeText = {onChangeText}/>
