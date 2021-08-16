@@ -14,9 +14,6 @@ const InputField = styled.TextInput`
     flex : 1;
     color : #38738a;
 
-    // &:hover {
-    //     border-color :#00c3ff;
-    //   }
 `;
 
 interface Props{
@@ -38,7 +35,7 @@ const Input = ({
     return(
         <Container style ={style}>
             <InputField
-                selectionColor = "#FFFFFF"
+                selectionColor = "#38738a"
                 secureTextEntry = {secureTextEntry}
                 keyboardType ={keyboardType ? keyboardType : 'default'}
                 autoCapitalize = "none"
