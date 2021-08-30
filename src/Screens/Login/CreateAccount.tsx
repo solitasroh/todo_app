@@ -5,9 +5,10 @@ import Input from './Input';
 import Button from './Button';
 import {LoginNaviParamList} from '../types';
 import {Controller, FieldValues, useForm} from 'react-hook-form';
-import {gql, useMutation} from '@apollo/client';
+import {useMutation} from '@apollo/client';
 import {Alert} from 'react-native';
 import {Auth, SIGNUP, SignupInput} from '~/apollo/auth.query';
+import Login from './Login';
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -35,21 +36,31 @@ interface Props {
 const CreateAccount = ({navigation}: Props) => {
   //------ signup request  -----------------------------
   // signup 요청은 "signup()" 를 호출
+
   const [signup, {error, data, loading}] = useMutation<
     {signup: Auth}, // sign_up 응답 데이터
     {data: SignupInput} // signup variables (입력)
   >(SIGNUP, {
     // signup 성공 시 처리 : 화면 전환 등..
-    onCompleted({signup}) {
-      console.log(signup);
+    onCompleted({signup}): void {
       Alert.alert('Success', 'sign up!', [
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        {
+          text: 'OK',
+          onPress: () => {
+            navigation.navigate('Login');
+          },
+        },
       ]);
     },
     // signup 실패 시 error 응답 처리
-    onError(error) {
+    onError(error): void {
       Alert.alert('Fail', error.message, [
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        {
+          text: 'OK',
+          onPress: () => {
+            navigation.navigate('Login');
+          },
+        },
       ]);
     },
   });
