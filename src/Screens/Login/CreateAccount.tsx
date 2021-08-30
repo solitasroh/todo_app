@@ -7,6 +7,7 @@ import {LoginNaviParamList} from '../types';
 import {Controller, FieldValues, useForm} from 'react-hook-form';
 import {gql, useMutation} from '@apollo/client';
 import {Alert} from 'react-native';
+import {Auth, SIGNUP, SignupInput} from '~/apollo/auth.query';
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -27,39 +28,6 @@ const ErrorField = styled.Text`
 const EMAIL_PATTERN =
   /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g;
 type NavigationProp = StackNavigationProp<LoginNaviParamList, 'CreateAccount'>;
-
-/* 
-  회원가입 쿼리
-  signup input 의 데이터를 입력해 인자로 전달하면, 
-  서버로 해당 데이터를 전송한다.
-  access Token, refreshToken, user를 응답 요청한다.
-*/
-const SIGNUP = gql`
-  mutation signup($data: SignupInput!) {
-    signup(data: $data) {
-      accessToken
-      refreshToken
-    }
-  }
-`;
-
-interface SignupInput {
-  email: string;
-  password: string;
-  name?: string;
-}
-
-interface User {
-  email: string;
-  password?: string;
-  name?: string;
-}
-
-interface Auth {
-  accessToken: string;
-  refreshToken: string;
-  user?: User;
-}
 
 interface Props {
   navigation: NavigationProp;
